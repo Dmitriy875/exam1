@@ -5,9 +5,13 @@
 <head>
     <title><? $APPLICATION->ShowTitle(); ?></title>
 	<? $APPLICATION->ShowHead(); ?>
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/owl.carousel.min.js"></script>
-    <script src="./js/scripts.js"></script>
+	<? $APPLICATION->SetAdditionalCSS( SITE_TEMPLATE_PATH."/css/style.css" ); ?>
+	<? $APPLICATION->SetAdditionalCSS( SITE_TEMPLATE_PATH."/css/reset.css" ); ?>
+	<? $APPLICATION->SetAdditionalCSS( SITE_TEMPLATE_PATH."/css/owl.carousel.css" ); ?>
+    <? $APPLICATION->AddHeadScript( SITE_TEMPLATE_PATH."/js/jquery.min.js" ); ?>
+    <? $APPLICATION->AddHeadScript( SITE_TEMPLATE_PATH."/js/owl.carousel.min.js" ); ?>
+    <? $APPLICATION->AddHeadScript( SITE_TEMPLATE_PATH."/js/scripts.js" ); ?>
+    <link href = "<?= SITE_TEMPLATE_PATH ?>/img/favicon.ico" rel = "shortcut icon">
 </head>
 
 <body>
