@@ -96,7 +96,6 @@
 					false
 				);?>
 				
-
         <div class="page">
             <!-- content box -->
             <div class="content-box">
