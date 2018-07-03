@@ -80,8 +80,10 @@
 			),
 			false
 );?>
-        
+
         <!-- /nav -->
+		
+		
                <?$APPLICATION->IncludeComponent(
 					"bitrix:breadcrumb", 
 					"ass", 
