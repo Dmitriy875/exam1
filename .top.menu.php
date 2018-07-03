@@ -18,14 +18,14 @@ $aMenuLinks = Array(
 		"Новости", 
 		"news/", 
 		Array(), 
-		Array(), 
+		Array("COLOR"=>"red"), 
 		"" 
 	),
 	Array(
 		"Продукция", 
 		"products/", 
 		Array(), 
-		Array(), 
+		Array("COLOR"=>"lightblue"), 
 		"" 
 	),
 	Array(
