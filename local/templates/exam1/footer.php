@@ -11,24 +11,24 @@
                 <div class="side">
                     <!-- side anonse -->
 					<?$APPLICATION->IncludeComponent(
-	"bitrix:menu", 
-	"menu-left_nice", 
-	array(
-		"ALLOW_MULTI_SELECT" => "N",
-		"CHILD_MENU_TYPE" => "left",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "1",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "N",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"ROOT_MENU_TYPE" => "left",
-		"USE_EXT" => "Y",
-		"COMPONENT_TEMPLATE" => "menu-left_nice"
-	),
-	false
-);?>
+						"bitrix:menu", 
+						"menu-left_nice", 
+						array(
+							"ALLOW_MULTI_SELECT" => "N",
+							"CHILD_MENU_TYPE" => "left",
+							"DELAY" => "N",
+							"MAX_LEVEL" => "1",
+							"MENU_CACHE_GET_VARS" => array(
+							),
+							"MENU_CACHE_TIME" => "3600",
+							"MENU_CACHE_TYPE" => "N",
+							"MENU_CACHE_USE_GROUPS" => "Y",
+							"ROOT_MENU_TYPE" => "left",
+							"USE_EXT" => "N",
+							"COMPONENT_TEMPLATE" => "menu-left_nice"
+						),
+						false
+					);?>
                     <div class="side-block side-anonse">
                         <div class="title-block"><span class="i i-title01"></span>Полезная информация!</div>
                         <div class="item">
@@ -155,7 +155,18 @@
                 <div class="title-block"><?= GetMessage("CONTACT_INFORMATION"); ?></div>
                 <div class="loc-block">
                     <div class="address">ул. Летняя, стр.12, офис 512</div>
-                    <div class="phone"><a href="tel:84952128506">8 (495) 212-85-06</a>
+                    <div class="phone"><a href="tel:84952128506"><?$APPLICATION->IncludeComponent(
+																		"bitrix:main.include", 
+																		"template1", 
+																		array(
+																			"AREA_FILE_RECURSIVE" => "Y",
+																			"AREA_FILE_SHOW" => "sect",
+																			"AREA_FILE_SUFFIX" => "inc",
+																			"EDIT_TEMPLATE" => "",
+																			"COMPONENT_TEMPLATE" => "template1"
+																		),
+																		false
+																	);?></a>
                     </div>
                 </div>
                 <div class="main-soc-block">
