@@ -11,3 +11,4 @@ sitemap*.xml
 !/bitrix/templates
 /webstat/
 /upload/
+del.php

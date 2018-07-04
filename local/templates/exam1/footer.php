@@ -32,7 +32,18 @@
                     <div class="side-block side-anonse">
                         <div class="title-block"><span class="i i-title01"></span>Полезная информация!</div>
                         <div class="item">
-                            <p>Клиенты предпочитают все больше эко-материалов.</p>
+                            <p><?$APPLICATION->IncludeComponent(
+									"bitrix:main.include", 
+									".default", 
+									array(
+										"AREA_FILE_SHOW" => "sect",
+										"AREA_FILE_SUFFIX" => "usefull_info",
+										"EDIT_TEMPLATE" => "",
+										"COMPONENT_TEMPLATE" => ".default",
+										"AREA_FILE_RECURSIVE" => "Y"
+									),
+									false
+								);?><br></p>
                         </div>
                     </div>
                     <!-- /side anonse -->
