@@ -12,3 +12,4 @@ sitemap*.xml
 /webstat/
 /upload/
 del.php
+/local/temporary
