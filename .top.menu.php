@@ -48,6 +48,13 @@ $aMenuLinks = Array(
 		Array(), 
 		Array(), 
 		"" 
+	),
+	Array(
+		"Отзывы", 
+		"rew/", 
+		Array(), 
+		Array(), 
+		"" 
 	)
 );
 ?>

@@ -8,6 +8,7 @@
 	<? $APPLICATION->SetAdditionalCSS( SITE_TEMPLATE_PATH."/css/style.css" ); ?>
 	<? $APPLICATION->SetAdditionalCSS( SITE_TEMPLATE_PATH."/css/reset.css" ); ?>
 	<? $APPLICATION->SetAdditionalCSS( SITE_TEMPLATE_PATH."/css/owl.carousel.css" ); ?>
+	<? $APPLICATION->SetAdditionalCSS( SITE_TEMPLATE_PATH."/components/bitrix/news.list/reviews/style.css" ); ?>
     <? $APPLICATION->AddHeadScript( SITE_TEMPLATE_PATH."/js/jquery.min.js" ); ?>
     <? $APPLICATION->AddHeadScript( SITE_TEMPLATE_PATH."/js/owl.carousel.min.js" ); ?>
     <? $APPLICATION->AddHeadScript( SITE_TEMPLATE_PATH."/js/scripts.js" ); ?>
@@ -102,7 +103,7 @@
                 <!-- content -->
                 <div class="content">
                     <div class="cnt">
-					<h1><? $APPLICATION->ShowTitle(); ?></h1>
+					<header><h1><? $APPLICATION->ShowTitle(false); ?></h1></header>
 					<? if( $APPLICATION->GetCurPage() == "/" ) :?>
 						<p>ЭТО ТОЛЬКО НА ГЛАВНОЙ«Мебельная компания» осуществляет производство мебели на высококлассном оборудовании с применением минимальной доли ручного труда, что позволяет обеспечить высокое качество нашей продукции. Налажен производственный процесс как массового и индивидуального характера, что с одной стороны позволяет обеспечить постоянную номенклатуру изделий и индивидуальный подход – с другой.
 						</p>
