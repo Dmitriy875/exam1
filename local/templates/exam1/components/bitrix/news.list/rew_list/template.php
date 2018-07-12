@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 						<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
 							<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
 								<?if(!$arItem['PREVIEW_PICTURE']):?>
-<!-- Здесь условие для отстутствующей картинки компонента слева -->
+<!-- Здесь условие для отсутствующей картинки компонента слева -->
 								<?elseif( $arItem['PREVIEW_PICTURE']['HEIGHT'] > 40 ):
 									$renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 40, "height" => 40));
 									echo CFile::ShowImage($renderImage['src'], $newWidth, $newHeight, "border=0", "", true);?>
