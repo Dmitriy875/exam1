@@ -21,6 +21,9 @@ $this->setFrameMode(true);
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
+
+	<!--<pre><? print_r( $arItem ); ?></pre>-->
+	
 	<div class="review-block" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 		<div class="review-block-title">
 			
@@ -79,16 +82,23 @@ $this->setFrameMode(true);
 						style="float:left"
 						/></a>
 				<?else:?>
-					<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img
-						class="preview_picture"
-						border="0"
-						src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-						width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-						height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
-						alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-						title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-						style="float:left"
-						/></a>
+					<?
+						if( $arItem['PREVIEW_PICTURE']['HEIGHT'] > 66 ) {
+							$renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 66, "height" => 66));
+							echo CFile::ShowImage($renderImage['src'], $newWidth, $newHeight, "border=0", "", true);
+						} else {?>
+							<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img
+								class="preview_picture"
+								border="0"
+								src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
+								width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
+								height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
+								alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
+								title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
+								style="float:left"
+							/></a>
+						<?}?>
+					
 				<?endif;?>
 			<?else:?>
 				<img

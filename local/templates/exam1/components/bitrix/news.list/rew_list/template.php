@@ -29,16 +29,23 @@ $this->setFrameMode(true);
 					<div class="photo-block">
 						<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])):?>
 							<?if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])):?>
-								<a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img
-										class="preview_picture"
-										border="0"
-										src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
-										width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
-										height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
-										alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
-										title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
-										style="float:left"
-										/></a>
+								<?if(!$arItem['PREVIEW_PICTURE']):?>
+<!-- Здесь условие для отстутствующей картинки компонента слева -->
+								<?elseif( $arItem['PREVIEW_PICTURE']['HEIGHT'] > 40 ):
+									$renderImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 40, "height" => 40));
+									echo CFile::ShowImage($renderImage['src'], $newWidth, $newHeight, "border=0", "", true);?>
+								<?else: ?>
+									 <a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><img
+											class="preview_picture"
+											border="0"
+											src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
+											width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
+											height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
+											alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
+											title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>"
+											style="float:left"
+											/></a>
+								 <?endif;?>
 							<?else:?>
 								<img
 									class="preview_picture"
