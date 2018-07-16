@@ -36,17 +36,17 @@
                         <button type="submit"></button>
                     </form>
                         <?$APPLICATION->IncludeComponent(
-							"bitrix:system.auth.form", 
-							"authForm", 
-							array(
-								"COMPONENT_TEMPLATE" => "authForm",
-								"FORGOT_PASSWORD_URL" => "/user/",
-								"PROFILE_URL" => "/user/profile.php",
-								"REGISTER_URL" => "/user/registration.php",
-								"SHOW_ERRORS" => "Y"
-							),
-							false
-						);?>
+	"bitrix:system.auth.form", 
+	"authForm", 
+	array(
+		"COMPONENT_TEMPLATE" => "authForm",
+		"FORGOT_PASSWORD_URL" => "/user/",
+		"PROFILE_URL" => "/user/profile.php",
+		"REGISTER_URL" => "/user/registration.php",
+		"SHOW_ERRORS" => "Y"
+	),
+	false
+);?>
                 </div>
             </div>
         </header>

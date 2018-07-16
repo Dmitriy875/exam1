@@ -53,6 +53,15 @@ if($arResult["FORM_TYPE"] == "login")
 				<div class="frm-row">
 					<input type="submit" name="Login" value="<?=GetMessage("AUTH_LOGIN_BUTTON")?>">
 				</div>
+				<?if ($arResult["CAPTCHA_CODE"]):?>
+		<tr>
+			<td colspan="2">
+			<?echo GetMessage("AUTH_CAPTCHA_PROMT")?>:<br />
+			<input type="hidden" name="captcha_sid" value="<?echo $arResult["CAPTCHA_CODE"]?>" />
+			<img src="/bitrix/tools/captcha.php?captcha_sid=<?echo $arResult["CAPTCHA_CODE"]?>" width="180" height="40" alt="CAPTCHA" /><br /><br />
+			<input type="text" name="captcha_word" maxlength="50" value="" /></td>
+		</tr>
+<?endif?>
 			</form></li>
 		<li><a href="<?=$arResult["AUTH_REGISTER_URL"]?>"><?=GetMessage("AUTH_REGISTER")?></a></li>
 	</ul>
@@ -60,7 +69,7 @@ if($arResult["FORM_TYPE"] == "login")
 <? } else { ?>
 	<nav class="menu-block">
 	<ul>
-		<li><a href="<?=$arResult["PROFILE_URL"]?>"><?=$arResult["USER_NAME"]?> [<?=$arResult["USER_LOGIN"]?>]</a>
+		<li><?=$arResult["USER_NAME"]?> <a href="<?=$arResult["PROFILE_URL"]?>">[<?=$arResult["USER_LOGIN"]?>]</a>
 			</li>
 		<li><form action="<?=$arResult["AUTH_URL"]?>">
 				<?foreach ($arResult["POST"] as $key => $value):?>
